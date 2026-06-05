@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Build folders
+dist/
+build/
+
+# IDE
+.vscode/
+
+# OS files
+.DS_Store
