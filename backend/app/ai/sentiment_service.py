@@ -13,12 +13,14 @@ def analyze_sentiment(message: str) -> dict:
             {
                 "role": "system",
                 "content": (
-                    "You are a sentiment analysis engine. "
+                    "You are a sentiment and purchase intent analysis engine. "
                     "Analyze the message and respond ONLY with a JSON object like this: "
-                    '{"sentiment": "positive", "score": 0.95, "intent": "compliment"} '
-                    "Sentiment must be one of: positive, negative, neutral, question. "
-                    "Score is between 0 and 1. "
-                    "Intent must be one of: compliment, complaint, question, spam, purchase_intent. "
+                    '{"sentiment": "positive", "score": 0.95, "intent": "purchase_intent", "purchase_score": 87, "cta": "DM me for the link!"} '
+                    "sentiment: positive, negative, neutral, question. "
+                    "score: 0 to 1. "
+                    "intent: compliment, complaint, question, spam, purchase_intent. "
+                    "purchase_score: 0 to 100 — how likely this person wants to buy. "
+                    "cta: if purchase_score > 50, suggest a short CTA reply the creator can use. Otherwise empty string. "
                     "Respond with JSON only, no extra text."
                 )
             },

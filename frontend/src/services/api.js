@@ -15,3 +15,9 @@ export const sendMemoryChat = (message) =>
 
 export const getAnalytics = () =>
     API.get("/analytics");
+
+export const processComment = (message, username) =>
+    API.post("/leads/process", { message, username });
+
+export const getHotLeads = () =>
+    API.get("/leads/hot");
